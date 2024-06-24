@@ -1,0 +1,70 @@
+[
+  {
+    "id": "M1",
+    "name": "Work",
+    "children": [
+      {
+        "id": 11,
+        "name": "Workspace - Oracle Secure Global Desktop",
+        "url": "https://pd-sgd.oraclecorp.com/sgd/thin.jsp?SGD_Token=mKNV0aeO3kp~vg14HtC-E.ATt.1.AurD"
+      },
+      {
+        "id": 12,
+        "name": "OA Workspace - Oracle Secure Global Desktop",
+        "url": "https://pd-sgd-phx.appoci.oraclecorp.com/sgd/?SGD_Token=.SUA9~Z4Ey1Bh3qx3kFduBIgCx_9~xo7"
+      },
+      {
+        "id": 13,
+        "name": "BugDB",
+        "url": "https://bug.oraclecorp.com/"
+        
+      },
+      {
+        "id": 14,
+        "name": "Aru",
+        "url": "http://aru.us.oracle.com/"
+        
+      },
+      {
+        "id": 15,
+        "name": "CST Bug Tracker",
+        "url": "https://apex.oraclecorp.com/pls/apex/smukalla/r/cstdevbugs36681/bugstatistics"
+        
+      },
+      {
+        "id": 16,
+        "name": "Code Search",
+        "url": "http://ipg.us.oracle.com:7000/acs/search.jsp"
+        
+      },
+      {
+        "id": 17,
+        "name": "Support portal (Adv Search)",
+        "url": "https://mosemp.us.oracle.com/epmos/faces/AdvancedSearch?_afrLoop=267248881185560&amp;_afrWindowMode=0&amp;_adf.ctrl-state=9d3wfs4bz_4"
+        
+      },
+      {
+        "id": 18,
+        "name": "PTS",
+        "url": "http://pts.us.oracle.com/"
+        
+      }
+    ]
+  },
+  {
+    "name": "Oracle",
+    "id": "M2",
+    "children": [
+      {
+        "id": 21,
+        "name": "My Oracle",
+        "url": "https://my.oracle.com/"
+      },
+      {
+        "id": 22,
+        "name": "Aria",
+        "url": "https://people.oracle.com/"
+      }
+    ]
+  }
+]

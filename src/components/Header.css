@@ -1,0 +1,26 @@
+header {
+    position: sticky;
+    top: 0;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    background-color:cadetblue;
+    justify-content: space-between;
+}
+
+.header-top img {
+    max-width: 60px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.header-top span{
+    font-size: 28px;
+    color: white;
+    font-weight:bold;
+    margin: auto;
+    cursor: pointer;
+}

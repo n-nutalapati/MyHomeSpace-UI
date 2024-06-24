@@ -1,0 +1,18 @@
+.menu-card {
+    width: 50%;
+    margin: auto;
+    padding: 2%;
+    color: white;
+    /* background-color: darkgrey; */
+}
+
+.menu-card h2 {
+    text-align: center;
+    height: auto;
+}
+
+.menu-card .add {
+    background-color: rgb(56, 56, 250);
+    display: block;
+    margin: auto;
+}

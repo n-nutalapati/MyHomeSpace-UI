@@ -1,0 +1,33 @@
+.menu-item{
+    width: 100%;
+}
+
+.menu-item span{
+  font-weight: bold;
+}
+
+.menu-item li{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    margin: 2px 5px;
+    padding: 4px;
+}
+
+.menu-item li div {
+    justify-content: space-between;
+}
+
+  
+  button:hover {
+    color: rgb(0, 212, 212);
+    background: white;
+  }
+
+   button.update{
+    background-color: rgb(0, 209, 0);
+  }
+
+  button.delete {
+    background-color: rgb(248, 60, 60);
+  }

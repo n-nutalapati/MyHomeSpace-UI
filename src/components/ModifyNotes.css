@@ -1,0 +1,96 @@
+.upd-container{
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.upd-page{
+    border-radius: 5px;
+    padding: 2rem;
+    background-color: white;
+    width: 50rem;
+    
+}
+
+
+.title-form-input {
+    display: flex; 
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.title-form-input  input {
+    border: 1px solid black;
+    border-radius: 0.3rem;
+    padding: 0.3rem;
+    
+}
+
+.title-form-input  textarea {
+    border: 1px solid black;
+    border-radius: 0.3rem;
+    padding: 0.3rem;
+    
+}
+
+.input-area{
+    position: relative;
+    margin: 5px 0;
+}
+
+.input-area .label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 15px;
+    padding: 0 5px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-area input{
+    width: 250px;
+    height: 40px;
+    font-size: 16px;
+    padding: 0 10px;
+    background: transparent;
+    outline: none;
+}
+
+.input-area input:focus~.label,
+.input-area input:valid~.label {
+    top: 0;
+    font-size: 12px;
+    background: white;
+    font-weight: bold;
+}
+
+.input-area textarea{
+    width: 600px;
+    height: 200px;
+    font-size: 16px;
+    padding: 10px 10px;
+    background: transparent;
+    outline: none;
+    text-decoration: none;
+}
+
+.input-area textarea:focus~.label,
+.input-area textarea:valid~.label {
+    top: 0;
+    font-size: 12px;
+    background: white;
+    font-weight: bold;
+}
+
+.button-container{
+    text-align: center;
+}
