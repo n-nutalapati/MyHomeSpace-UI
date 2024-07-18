@@ -2,17 +2,27 @@
     width: 50%;
     margin: auto;
     padding: 2%;
-    color: white;
+    /* color: white; */
     /* background-color: darkgrey; */
 }
 
-.menu-card h2 {
+.menu-card h1 {
     text-align: center;
     height: auto;
 }
 
-.menu-card .add {
+.menu-card button {
+    border: none;
+    /* background: transparent; */
+    padding: 6px 16px;
+    color: white;
+    border-radius: 10px;
+    transition: 0.3s all ease-out;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     background-color: rgb(56, 56, 250);
     display: block;
     margin: auto;
-}
+  }

@@ -1,6 +1,7 @@
 import { useState } from "react";
-import api from "../api/menu";
+// import api from "../api/menu";
 import "./ModifyNotes.css";
+import ApiService from "../service/ApiService";
 
 const ModifyNotes = ({
   closeForm,
@@ -9,13 +10,18 @@ const ModifyNotes = ({
   editDefaultValue,
   noteToEdit,
   setNoteToEdit,
+  // isUpdated,
+  // setIsUpdated
 }) => {
   // const date = new Date();
   const [enteredNote, setEnteredNote] = useState(editDefaultValue[0] || {});
+  const userId = localStorage.getItem("userId");
+  const token = localStorage.getItem("token")
 
   const handleChange = (e) => {
     setEnteredNote((values) => ({
       ...values,
+      userId : userId,
       [e.target.name]: e.target.value,
     }));
   };
@@ -24,28 +30,39 @@ const ModifyNotes = ({
     e.preventDefault();
     if (noteToEdit === null) {
       if (enteredNote.title != null || enteredNote.content != null) {
-        const response = await api.post("/createNote", enteredNote);
-        let tempNote = enteredNote;
-        tempNote.id = response.data;
-        setNotesList((prev) => [...prev, tempNote]);
+        // const response = await api.post("/createNote", enteredNote);
+        // let tempNote = enteredNote;
+        // tempNote.id = response.data;
+        // const response = await api.post("/mdb/createNote", enteredNote);
+
+        const response = await ApiService.createNote(enteredNote, token);
+
+        setNotesList((prev) => [...prev, response]);
       }
     } else {
       try {
-        const response = await api.put(
-          `/updateNote/${noteToEdit}`,
-          enteredNote
+        // const response = await api.put(
+        //   `/updateNote/${noteToEdit}`,
+        //   enteredNote
+        // );
+
+        // const response = await api.put(
+        //   `/mdb/updateNote/${noteToEdit}`,
+        //   enteredNote
+        // );
+
+        const response = await ApiService.updateNote(noteToEdit, enteredNote, token)
+        setNotesList(
+          notesList.map((curNote) => {
+            if (curNote.id !== noteToEdit) return curNote;
+            else return response;
+          })
         );
-        console.log(response.data);
+
       } catch (error) {
         console.error("Error while editing: ", error);
       }
 
-      setNotesList(
-        notesList.map((curNote) => {
-          if (curNote.id !== noteToEdit) return curNote;
-          else return enteredNote;
-        })
-      );
       setNoteToEdit(null);
     }
     closeForm();

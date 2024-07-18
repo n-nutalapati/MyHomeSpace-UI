@@ -2,14 +2,29 @@
     background-color: rgb(231, 225, 225);
     /* width: 60%; */
     /* align-items: center; */
-    padding: 10px;
-    border-radius: 10px;    
+     padding: 10px;
+    /* border-radius: 10px;     */
     
 }
 
 .shownotes button {
-    background-color: cadetblue;
-}
+    border: none;
+    /* background: transparent; */
+    padding: 6px 16px;
+    color: white;
+    border-radius: 10px;
+    transition: 0.3s all ease-out;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: rgb(0, 209, 0);
+  }
+
+  .shownotes button:hover {
+    color: white;
+    background: rgb(0, 212, 212);
+  }
 
 .shownotes .top{
     display: flex;

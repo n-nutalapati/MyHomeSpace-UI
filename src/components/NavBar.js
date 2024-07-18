@@ -1,10 +1,12 @@
 import { useState } from "react";
 import "./NavBar.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = ({ data }) => {
 
   const [showSubMenu, setShowSubMenu] = useState([]);
+
+  const navigate = useNavigate();
 
   const handleSubMenuOnEnter = (subMenuId) => {
     setShowSubMenu((prev) => {
@@ -62,9 +64,9 @@ const NavBar = ({ data }) => {
           ))}
         </ul>
       </div>
-      <Link to="edit-menu">
-        <button className="btn">Edit</button>
-      </Link>
+      {/* <Link to="edit-menu"> */}
+        <button className="btn" onClick={(e)=>navigate("/edit-menu")}>Edit</button>
+      {/* </Link> */}
     </div>
   );
 };

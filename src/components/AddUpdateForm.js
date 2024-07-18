@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./AddUpdateForm.css";
-import api from "../api/menu";
+// import api from "../api/menu";
+import ApiService from "../service/ApiService";
 
 const AddUpdateForm = ({
   closeUpdatePage,
@@ -9,14 +10,18 @@ const AddUpdateForm = ({
   defaultValue,
   rowToEdit,
 }) => {
-  const date = new Date();
+  // const date = new Date();
 
   const [child, setChild] = useState( (rowToEdit && defaultValue[0].children) || []);
   const [enteredMenu, setEnteredMenu] = useState(defaultValue[0] || []);
+  
+  const userId = localStorage.getItem("userId");
+  const token = localStorage.getItem("token");
 
   const handleMenuChange = (e) => {
     setEnteredMenu({
-      id: "M" + date.getTime(),
+      // id: "M" + date.getTime(),
+      userId: userId,
       name: e.target.value,
       children: [...child],
     });
@@ -24,7 +29,7 @@ const AddUpdateForm = ({
 
   const handleChildChange = (e, i) => {
     let newChildren = [...child];
-    newChildren[i].id = "C" + date.getTime();
+    // newChildren[i].id = "C" + date.getTime();
     newChildren[i][e.target.name] = e.target.value;
     setChild(newChildren);
 
@@ -40,21 +45,28 @@ const AddUpdateForm = ({
       if (!validateForm()) return;
       try{
       // const response = await api.post('/menu', enteredMenu)
-      const response = await api.post('/createMenu', enteredMenu);
-      setData((prev) => [...prev, enteredMenu]);
-      console.log( 'Msg: '+ response.data);
+      // const response = await api.post('/createMenu', enteredMenu);
+      // const response = await api.post('/mdb/createMenu', enteredMenu);
+
+      const response = await ApiService.createMenu(enteredMenu, token);
+
+      setData((prev) => [...prev, response]);
+      // console.log( response.data);
       } catch(error){
         console.error("Error while submitting the row", error);
       }
     } else {
       try{
       // const response = await api.put(`/menu/${rowToEdit}`, enteredMenu);
-      const response = await api.put(`/updateMenu/${rowToEdit}`, enteredMenu);
-      console.log('Status: '+response.status + 'Msg: '+ response.data);
+      // const response = await api.put(`/updateMenu/${rowToEdit}`, enteredMenu);
+      // const response = await api.put(`/mdb/updateMenu/${rowToEdit}`, enteredMenu);
+
+      const response = await ApiService.updateMenu(rowToEdit, enteredMenu, token);
+      
       setData(
         data.map((currRow) => {
           if (currRow.id !== rowToEdit) return currRow;
-          return response.data;
+          return response;
         })
       );
       } catch(error){

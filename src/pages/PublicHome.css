@@ -1,0 +1,36 @@
+.public-home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: auto;
+    /* border: 1px solid;
+    border-radius: 10px; */
+    width: 600px;
+    padding: 20px;
+    background: #fff
+}
+
+.public-home h1 {
+    color: #3c009d;
+}
+
+.public-home .button-class{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.public-home .button-class div{
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #3c009d;
+}
+
+.public-home .button-class div:hover{
+    background-color: #6302ff;
+}

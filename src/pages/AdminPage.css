@@ -1,0 +1,51 @@
+.admin-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+  margin: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f2f2f2;
+}
+
+.admin-page-container .buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.admin-page-container .buttons button {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.admin-page-container button:hover {
+  background-color: #0056b3;
+}

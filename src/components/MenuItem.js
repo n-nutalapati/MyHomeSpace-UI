@@ -7,7 +7,7 @@ const MenuItem = ({ item, deleteMenu, editRow }) => {
         <span>
           {item.name}
         </span>
-        <div>
+        <div className="add-delete">
           <button className="btn update" onClick={() => editRow(item.id)}>edit</button>
           <button className="btn delete" onClick={() => deleteMenu(item.id)}>delete</button>
         </div>

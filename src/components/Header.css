@@ -6,21 +6,69 @@ header {
 .header-top {
     display: flex;
     align-items: center;
-    background-color:cadetblue;
-    justify-content: space-between;
+    justify-content:space-between;
+    background-color:#214b6c;
+    /* border-radius: 5px; */
+    /* justify-content: space-between; */
 }
 
-.header-top img {
+.header-top .title-logo{
+    display: flex;
+    align-items: center;
+}
+
+.header-top .title-logo img {
     max-width: 60px;
     margin: 5px;
     cursor: pointer;
     border-radius: 10px;
 }
 
-.header-top span{
+.header-top .title-logo span{
     font-size: 28px;
     color: white;
     font-weight:bold;
-    margin: auto;
+    justify-content: center;
+    /* align-items: center; */
+    margin-left: 10px;
+    /* text-align: center; */
     cursor: pointer;
+}
+
+
+
+.header-top .profile .user-logo{
+    margin-right: 20px;
+    background: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+
+.header-top .profile .profile-list{
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #fff;
+    padding: 10px;
+    width: 200px;
+}
+
+.header-top .profile .profile-list li{
+    padding: 5px;
+    cursor: pointer;
+}
+
+.header-top .profile .profile-list li:hover{
+    background-color: aliceblue;
+}
+
+.inactive{
+    display: none;
 }
