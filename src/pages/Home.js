@@ -28,8 +28,6 @@ const Home = () => {
         setLoading(false);
         setMenuData(response);
 
-        console.log(response)
-
       } catch (error) {
         // alert("Failed to fetch the Menu", error);
         setLoading(false)
