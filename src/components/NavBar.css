@@ -1,5 +1,6 @@
 .container{
     display: flex;
+    overflow: hidden;
     height: 7vh;
     /* margin: 5px; */
     /* border-radius: 5px; */
@@ -15,6 +16,7 @@
     align-items: center;
     /* padding: 6px 16px; */
     justify-content:space-between;
+    overflow: hidden;
 }
 
 .menu-items{

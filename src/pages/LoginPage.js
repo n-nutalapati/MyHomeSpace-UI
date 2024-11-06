@@ -26,7 +26,7 @@ const LoginPage = () => {
         localStorage.setItem("userId", userData.id);
         localStorage.setItem("role", userData.role);
 
-        navigate("/home");
+        navigate('/home');
       } else {
         setError(
           userData.message.substring(0, userData.message.indexOf(".")) ||

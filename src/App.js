@@ -20,22 +20,23 @@ function App() {
       <div className="content-main">
         <Routes>
           <Route exact path="/" element={<PublicHome />} />
-          <Route exact path="/login" element={<LoginPage />} />
-          <Route exact path="/register" element={<RegistrationPage />} />
-          <Route exact path="/not-found" element={<NotFoundPage />} />
+          <Route exact path="login" element={<LoginPage />} />
+          <Route exact path="register" element={<RegistrationPage />} />
+          <Route exact path="not-found" element={<NotFoundPage />} />
+          <Route exact path="/home" element={UserService.isAuthenticated() ? <Home /> : <PublicHome />} />
           {
             UserService.isAuthenticated() &&
             <>
-              <Route exact path="/home" element={<Home />} />
-              <Route exact path="/edit-menu" element={<EditPage />} />
-              <Route exact path="/profile" element={<UserProfile />} />
+              
+              <Route exact path="edit-menu" element={<EditPage />} />
+              <Route exact path="profile" element={<UserProfile />} />
             </>
           }
           {
             UserService.adminOnly() && 
             <>
-              <Route exact path="/admin/users" element={<AdminPage />} />
-              <Route path="/update-user/:userId" element={<UserUpdatePage />} />
+              <Route exact path="admin/users" element={<AdminPage />} />
+              <Route path="update-user/:userId" element={<UserUpdatePage />} />
             </>
           }
           <Route path="*" element={<Navigate to="/not-found" />} />
